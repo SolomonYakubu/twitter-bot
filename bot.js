@@ -15,25 +15,25 @@ const T = new Twit({
   consumer_secret,
 });
 
-const bot = () => {
+const bot = async () => {
   //Post a random joke
-  const joke = jokes.getRandomJoke();
+  const joke = await jokes.getRandomJoke();
   T.post(
     "statuses/update",
     {
       status: `${joke}
 #100DaysOfCode #javascript #codeNewbie`,
     },
-    (err, data, res) => {
-      console.log(data);
+    async (err, data, res) => {
+      await console.log(data);
     }
   );
   //Search tweets with specific tags
   T.get(
     "search/tweets",
     { q: "#100DaysOfCode OR #javascript OR #coding OR codeNewbie", count: 10 },
-    (err, data, res) => {
-      let tweets = data.statuses;
+    async (err, data, res) => {
+      let tweets = await data.statuses;
       if (!err) {
         const tweetIds = tweets.map((item) => item.id_str);
         const idSet = new Set(tweetIds);
@@ -42,11 +42,11 @@ const bot = () => {
 
         uniqueTweetIds.map((id) => {
           //Retweet tweets with those ids
-          T.post("statuses/retweet/:id", { id }, (err, data, res) => {
+          T.post("statuses/retweet/:id", { id }, async (err, data, res) => {
             if (!err) {
-              console.log(`Retweeted ${id} successfully`);
+              await console.log(`Retweeted ${id} successfully`);
             } else {
-              console.log(err);
+              await console.log(err);
             }
           });
         });
