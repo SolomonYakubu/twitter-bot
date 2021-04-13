@@ -17,7 +17,7 @@ const T = new Twit({
 
 const bot = async () => {
   //Post a random joke
-  const joke = await jokes.getRandomJoke();
+  const joke = jokes.getRandomJoke();
   T.post(
     "statuses/update",
     {
