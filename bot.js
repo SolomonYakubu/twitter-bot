@@ -16,8 +16,9 @@ const T = new Twit({
 });
 
 const bot = async () => {
-  //Post a random joke
+  //Post a random joke and qoute
   const joke = jokes.getRandomJoke();
+  const quote = jokes.getRandomQuote();
   T.post(
     "statuses/update",
     {
@@ -28,10 +29,20 @@ const bot = async () => {
       await console.log(data);
     }
   );
+  T.post(
+    "statuses/update",
+    {
+      status: `${quote}
+#100DaysOfCode #javascript #motivation`,
+    },
+    async (err, data, res) => {
+      await console.log(data);
+    }
+  );
   //Search tweets with specific tags
   T.get(
     "search/tweets",
-    { q: "#100DaysOfCode OR #javascript OR #coding OR codeNewbie", count: 10 },
+    { q: "#100DaysOfCode OR #javascript OR #coding OR codeNewbie", count: 5 },
     async (err, data, res) => {
       let tweets = await data.statuses;
       if (!err) {
