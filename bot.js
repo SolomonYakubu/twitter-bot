@@ -23,7 +23,7 @@ const bot = async () => {
     "statuses/update",
     {
       status: `${joke}
-#100DaysOfCode #javascript #codeNewbie`,
+#100DaysOfCode #code #codeNewbie`,
     },
     async (err, data, res) => {
       await console.log(data);
@@ -33,7 +33,7 @@ const bot = async () => {
     "statuses/update",
     {
       status: `${quote}
-#100DaysOfCode #javascript #motivation`,
+#100DaysOfCode #code #motivation`,
     },
     async (err, data, res) => {
       await console.log(data);
@@ -42,7 +42,7 @@ const bot = async () => {
   //Search tweets with specific tags
   T.get(
     "search/tweets",
-    { q: "#100DaysOfCode OR #javascript OR #coding OR codeNewbie", count: 5 },
+    { q: "#100DaysOfCode OR #javascript OR #coding OR #codeNewbie", count: 10 },
     async (err, data, res) => {
       let tweets = await data.statuses;
       if (!err) {
@@ -66,4 +66,4 @@ const bot = async () => {
   );
 };
 
-setInterval(bot, 120000);
+setInterval(bot, 60000);
