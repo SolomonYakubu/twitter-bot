@@ -66,4 +66,4 @@ const bot = async () => {
   );
 };
 
-setInterval(bot, 60000);
+setInterval(bot, 300000);
