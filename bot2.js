@@ -101,4 +101,4 @@ const post = () => {
   );
 };
 
-setInterval(post, 1000*60 * 60 * 60);
+setInterval(post, 1000*60 * 60 * 10);
