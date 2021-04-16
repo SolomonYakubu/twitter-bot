@@ -8,6 +8,8 @@ let stream = T.stream("statuses/filter", {
   track: [
     "@King__Solo",
     "@Nandeey1",
+"King__Solo",
+"#King__Solo",
     "#100DaysOfCode",
     "#Nodejs",
     "#codeNewbie",
@@ -99,4 +101,4 @@ const post = () => {
   );
 };
 
-setInterval(post, 60 * 60 * 60);
+setInterval(post, 1000*60 * 60 * 60);
