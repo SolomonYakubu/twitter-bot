@@ -10,6 +10,8 @@ let stream = T.stream("statuses/filter", {
     "@Nandeey1",
 "King__Solo",
 "#King__Solo",
+"Nandeey1",
+"#Nandeey1",
     "#100DaysOfCode",
     "#Nodejs",
     "#codeNewbie",
@@ -101,4 +103,4 @@ const post = () => {
   );
 };
 
-setInterval(post, 100 * 60 * 60 * 10);
+setInterval(post, 1000 * 60 * 10);
