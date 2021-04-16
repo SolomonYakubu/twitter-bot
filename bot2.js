@@ -7,6 +7,7 @@ const T = new Twit(config);
 let stream = T.stream("statuses/filter", {
   track: [
     "#King__Solo",
+    "#Nandeey1",
     "#100DaysOfCode",
     "#Nodejs",
     "#codeNewbie",
