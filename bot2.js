@@ -8,10 +8,10 @@ let stream = T.stream("statuses/filter", {
   track: [
     "@King__Solo",
     "@Nandeey1",
-"King__Solo",
-"#King__Solo",
-"Nandeey1",
-"#Nandeey1",
+    "King__Solo",
+    "#King__Solo",
+    "Nandeey1",
+    "#Nandeey1",
     "#100DaysOfCode",
     "#Nodejs",
     "#codeNewbie",
@@ -43,6 +43,8 @@ const isSpam = (twitter_text) => {
     "essay",
     "essays",
     "essaypay",
+    "assignment",
+    "assignments",
     "essaydue",
     "essayhelp",
     "essay pay",
@@ -54,7 +56,7 @@ const isSpam = (twitter_text) => {
     "cocaine",
     "drogue",
   ];
-  const spam = hashtags.filter((item) =>
+  const spam = hashtags.map((item) =>
     spam_hashtags.includes(item.trim().toLowerCase())
   );
   return spam.length > 0;
