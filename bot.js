@@ -67,4 +67,4 @@ const bot = async () => {
 };
 
 // setInterval(bot, 60000);
-console.log(jokes.getRandomJoke());
+// console.log(jokes.getRandomJoke());
