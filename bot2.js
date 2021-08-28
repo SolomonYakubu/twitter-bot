@@ -97,7 +97,7 @@ const post = () => {
     "statuses/update",
     {
       status: `${quote}
-#100DaysOfCode #code #motivation`,
+#100DaysOfCode #code #motivation #MotivationalQuotes`,
     },
     async (err, data, res) => {
       await console.log(data);
